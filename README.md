@@ -1,32 +1,48 @@
-# FittingCharts – Free Hydraulic Fitting Reference Site
+# FittingCharts
 
-Static HTML site with useful size charts and identification guides.
+Free hydraulic fitting reference charts for mechanics and shop techs. Plain static HTML and CSS, no build step. Hosted on GitHub Pages at [https://w-logistics.github.io/fitting-charts/](https://w-logistics.github.io/fitting-charts/).
 
-## Current pages
-- `index.html` – home
-- `jic-fitting-size-chart.html` – full JIC 37° flare size chart + ID guide
+Amazon product links use Associates tag `wlogistics-20` and `rel="sponsored noopener"`. The required sentence “As an Amazon Associate I earn from qualifying purchases” is in the footer of every page and next to the product links.
 
-## Free hosting (recommended)
+## Site structure
 
-### Option 1: GitHub Pages (easiest for most people)
-1. Create a free GitHub account if you don’t have one.
-2. Create a new public repository (e.g. `fitting-charts`).
-3. Upload the three files (`index.html`, `jic-fitting-size-chart.html`, `styles.css`) to the root of the repo.
-4. Go to Settings → Pages → Source: Deploy from a branch → Branch: main → Save.
-5. Your site will be live at `https://YOURUSERNAME.github.io/fitting-charts/` (or just `https://YOURUSERNAME.github.io/` if the repo is named `YOURUSERNAME.github.io`).
+| File | Page |
+| --- | --- |
+| `index.html` | Home. Short intro and a card for each chart. |
+| `jic-fitting-size-chart.html` | JIC 37° flare (SAE J514) size chart and identification. |
+| `orfs-fitting-size-chart.html` | ORFS O-ring face seal (SAE J1453 / Parker Seal-Lok) size chart, O-ring sizes, and identification. |
+| `disclosure.html` | About the site, sources, and the Amazon Associates disclosure. |
+| `404.html` | Not-found page. GitHub Pages serves this for unknown paths. |
+| `styles.css` | Shared layout. Tables sit in `.table-wrap` so they scroll on a phone. |
+| `sitemap.xml` | Pages to index. The 404 is omitted. |
+| `robots.txt` | Allows crawling and points at the sitemap. |
 
-### Option 2: Cloudflare Pages
-1. Sign up free at cloudflare.com.
-2. Pages → Create project → Upload assets (or connect a Git repo).
-3. Drag the folder or connect the GitHub repo.
-4. Free custom domain support later if you want one.
+Shared chrome on every HTML page: header with logo and nav, footer with the affiliate sentence and a link to `disclosure.html`, and the GoatCounter script immediately before `</body>`. The nav lists Home, JIC Chart, ORFS Chart, and About. The current page sets `aria-current="page"`.
 
-### Option 3: Netlify
-Same idea – drag-and-drop the folder or connect Git. Free tier is enough.
+Chart pages also set a unique title and meta description, a canonical URL under `https://w-logistics.github.io/fitting-charts/`, Open Graph tags, and JSON-LD (`TechArticle` plus `BreadcrumbList`). The home page uses `WebSite`. A page with a real FAQ also uses `FAQPage`.
 
-## Next steps after it is live
-1. Sign up for Amazon Associates (free) and replace any future “buy” links with your affiliate tags.
-2. Tell me and I will generate the next page (ORFS chart, NPT vs JIC, etc.) on the same schedule.
-3. Optional: buy a cheap domain (~$10–15/year) and point it at the free host.
+## Checklist for adding a page
 
-No paid tools required. Everything stays free until you choose otherwise.
+Copy `orfs-fitting-size-chart.html` (or `jic-fitting-size-chart.html`) as the template. Then:
+
+1. Give the new file its own title, meta description, canonical URL (`https://w-logistics.github.io/fitting-charts/...`), Open Graph tags, and JSON-LD. Chart pages get `TechArticle` and `BreadcrumbList`. Add `FAQPage` only when the page has a real FAQ section, and make the questions match the visible text.
+2. Add the page to the header nav on **every** HTML page, including `404.html`. On the new page only, set `aria-current="page"` on its nav link.
+3. Add a card on `index.html` that links to it.
+4. Add the canonical URL to `sitemap.xml`. Do not add `404.html`.
+5. Keep the footer sentence “As an Amazon Associate I earn from qualifying purchases” and the link to `disclosure.html`. If the page has Amazon links, repeat that disclosure next to the links. Use `rel="sponsored noopener"` and `?tag=wlogistics-20`. Link a specific `/dp/ASIN` page only when you have opened that listing. If you cannot verify an ASIN, use a tagged search URL. Do not invent an ASIN or a product fact.
+6. Paste this immediately before `</body>`:
+
+```html
+<script data-goatcounter="https://fittingcharts.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+```
+
+7. Link the new page from the related-pages list on the charts it belongs with.
+8. Open each page and click every internal link.
+
+## Hosting
+
+GitHub Pages: Settings → Pages → Deploy from branch `main` → root. The site is already published from this repository.
+
+Cloudflare Pages or Netlify can host the same folder. There is no build command. The publish directory is the repository root.
+
+A custom domain can be pointed at the host later. Canonical URLs in the HTML are the GitHub Pages URLs until that changes.

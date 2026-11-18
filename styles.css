@@ -62,13 +62,24 @@ header .container {
 .logo span {
   color: var(--accent);
 }
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 1.1rem;
+}
 nav a {
-  margin-left: 1.25rem;
   color: var(--muted);
   font-size: 0.95rem;
 }
-nav a:hover {
+nav a:hover,
+nav a[aria-current="page"] {
   color: var(--text);
+}
+nav a[aria-current="page"] {
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 0.28rem;
 }
 
 /* Typography */
@@ -126,7 +137,14 @@ table {
   width: 100%;
   border-collapse: collapse;
   font-size: 0.9rem;
-  min-width: 640px;
+  min-width: 720px;
+}
+caption {
+  caption-side: bottom;
+  text-align: left;
+  padding: 0.7rem 0.9rem 0.2rem;
+  color: var(--muted);
+  font-size: 0.85rem;
 }
 th, td {
   padding: 0.7rem 0.9rem;
@@ -175,6 +193,68 @@ li {
   background: var(--accent-hover);
 }
 
+/* Home chart grid */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin: 1rem 0 1.5rem;
+}
+a.chart-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.25rem;
+  color: inherit;
+  text-decoration: none;
+  min-height: 100%;
+}
+a.chart-card:hover {
+  border-color: var(--accent);
+  color: inherit;
+  text-decoration: none;
+}
+a.chart-card h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+a.chart-card p {
+  margin: 0;
+}
+.chart-card .meta {
+  color: var(--accent);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+.chart-card .cta {
+  margin-top: auto;
+  padding-top: 0.75rem;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.breadcrumb {
+  font-size: 0.875rem;
+  margin-bottom: 0.85rem;
+  color: var(--muted);
+}
+.breadcrumb a {
+  color: var(--muted);
+}
+
+.affiliate-disclosure {
+  color: var(--text);
+}
+
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.92em;
+  color: var(--text);
+}
+
 /* Footer */
 footer {
   margin-top: 3rem;
@@ -184,10 +264,12 @@ footer {
   font-size: 0.85rem;
   text-align: center;
 }
+footer a {
+  color: var(--accent);
+}
 
 /* Responsive */
 @media (max-width: 600px) {
   h1 { font-size: 1.5rem; }
   .container { padding: 1rem; }
-  nav a { margin-left: 0.75rem; }
 }
