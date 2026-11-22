@@ -11,6 +11,7 @@ Amazon product links use Associates tag `wlogistics-20` and `rel="sponsored noop
 | `index.html` | Home. Short intro and a card for each chart. |
 | `jic-fitting-size-chart.html` | JIC 37° flare (SAE J514) size chart and identification. |
 | `orfs-fitting-size-chart.html` | ORFS O-ring face seal (SAE J1453 / Parker Seal-Lok) size chart, O-ring sizes, and identification. |
+| `sae-o-ring-boss-orb-fitting-chart.html` | SAE O-ring boss (ORB, SAE J1926) size chart, 900-series O-ring sizes, and identification. |
 | `npt-thread-size-chart.html` | NPT pipe thread (ASME B1.20.1) size chart, identification diameters, and NPT versus NPTF and BSPT. |
 | `bspp-bspt-thread-size-chart.html` | BSPP and BSPT pipe thread (ISO 228-1 and ISO 7-1) size chart, major diameters, and parallel versus taper sealing. |
 | `din-2353-24-degree-cone-fitting-chart.html` | DIN 2353 / ISO 8434-1 24° cone size chart for LL, L, and S series, with tube OD, metric thread, and Parker hex. |
@@ -20,7 +21,7 @@ Amazon product links use Associates tag `wlogistics-20` and `rel="sponsored noop
 | `sitemap.xml` | Pages to index. The 404 is omitted. |
 | `robots.txt` | Allows crawling and points at the sitemap. |
 
-Shared chrome on every HTML page: header with logo and nav, footer with the affiliate sentence and a link to `disclosure.html`, and the GoatCounter script immediately before `</body>`. The nav lists Home, JIC Chart, ORFS Chart, NPT Chart, BSP Chart, DIN Chart, and About. The current page sets `aria-current="page"`.
+Shared chrome on every HTML page: header with logo and nav, footer with the affiliate sentence and a link to `disclosure.html`, and the GoatCounter script immediately before `</body>`. The nav lists Home, JIC Chart, ORFS Chart, ORB Chart, NPT Chart, BSP Chart, DIN Chart, and About. The current page sets `aria-current="page"`.
 
 Chart pages also set a unique title and meta description, a canonical URL under `https://w-logistics.github.io/fitting-charts/`, Open Graph tags, and JSON-LD (`TechArticle` plus `BreadcrumbList`). The home page uses `WebSite`. A page with a real FAQ also uses `FAQPage`.
 
