@@ -17,6 +17,7 @@ Amazon product links use Associates tag `wlogistics-20` and `rel="sponsored noop
 | `bspp-bspt-thread-size-chart.html` | BSPP and BSPT pipe thread (ISO 228-1 and ISO 7-1) size chart, major diameters, and parallel versus taper sealing. |
 | `din-2353-24-degree-cone-fitting-chart.html` | DIN 2353 / ISO 8434-1 24° cone size chart for LL, L, and S series, with tube OD, metric thread, and Parker hex. |
 | `hydraulic-hose-dash-size-chart.html` | Hydraulic hose dash size (SAE J517): nominal ID, how it differs from a fitting dash, and catalog examples of OD and working pressure. |
+| `sae-j518-code-61-62-flange-chart.html` | SAE J518 / ISO 6162 4-bolt split flange chart for Code 61 and Code 62: head OD, bolt spacing, UNC and metric bolts, flange O-ring, and rated pressure. |
 | `how-to-identify-hydraulic-fittings.html` | How to tell JIC, ORFS, NPT, BSP, ORB, and metric 24° cone fittings apart: seal, thread form, and measured thread OD and pitch. |
 | `disclosure.html` | About the site, sources, and the Amazon Associates disclosure. |
 | `404.html` | Not-found page. GitHub Pages serves this for unknown paths. |
@@ -24,7 +25,7 @@ Amazon product links use Associates tag `wlogistics-20` and `rel="sponsored noop
 | `sitemap.xml` | Pages to index. The 404 is omitted. |
 | `robots.txt` | Allows crawling and points at the sitemap. |
 
-Shared chrome on every HTML page: header with logo and nav, footer with the affiliate sentence and a link to `disclosure.html`, and the GoatCounter script immediately before `</body>`. The nav lists Home, JIC Chart, ORFS Chart, ORB Chart, Torque Chart, NPT Chart, BSP Chart, DIN Chart, Hose Chart, ID Guide, and About. The current page sets `aria-current="page"`.
+Shared chrome on every HTML page: header with logo and nav, footer with the affiliate sentence and a link to `disclosure.html`, and the GoatCounter script immediately before `</body>`. The nav lists Home, JIC Chart, ORFS Chart, ORB Chart, Torque Chart, NPT Chart, BSP Chart, DIN Chart, Hose Chart, Flange Chart, ID Guide, and About. The current page sets `aria-current="page"`.
 
 Chart pages also set a unique title and meta description, a canonical URL under `https://w-logistics.github.io/fitting-charts/`, Open Graph tags, and JSON-LD (`TechArticle` plus `BreadcrumbList`). The home page uses `WebSite`. A page with a real FAQ also uses `FAQPage`.
 
